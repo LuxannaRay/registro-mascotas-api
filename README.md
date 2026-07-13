@@ -1,6 +1,24 @@
 # Registro Civil de Mascotas — API
 
-Servidor Node.js (Express) que registra mascotas y el rut de su dueño en un archivo JSON (`data/mascotas.json`).
+## Objetivos de la aplicación
+
+Esta aplicación consiste en una API desarrollada en Node.js (Express) que permite gestionar el registro de mascotas asociadas al rut de su dueño, utilizando un archivo JSON como medio de almacenamiento. Los objetivos específicos son:
+
+- Registrar mascotas nuevas, asociadas al nombre y al rut de su dueño.
+- Consultar el listado completo de mascotas registradas.
+- Buscar una mascota específica por su nombre.
+- Buscar todas las mascotas registradas bajo un rut determinado.
+- Eliminar una mascota por su nombre.
+- Eliminar todas las mascotas asociadas a un rut.
+- Proveer un frontend (HTML, CSS y Axios) que consuma la API y maneje los errores de forma centralizada mediante un interceptor.
+
+## Autora
+
+Fernanda Núñez
+
+## URL del repositorio
+
+https://github.com/LuxannaRay/registro-mascotas-api
 
 ## Cómo correrlo
 
@@ -18,7 +36,7 @@ Luego abrir en el navegador: **http://localhost:3000**
 | GET | `/api/mascotas` | Retorna todas las mascotas con su dueño |
 | GET | `/api/mascotas?nombre=Firulais` | Retorna la mascota con ese nombre y el rut de su dueño |
 | GET | `/api/mascotas?rut=12.345.678-9` | Retorna todas las mascotas asociadas a ese rut |
-| POST | `/api/mascotas` | Inserta una mascota (body: `nombre`, `rut`) |
+| POST | `/api/mascotas` | Inserta una mascota (body: `nombre`, `rut`, `tipo`: "perro" o "gato") |
 | DELETE | `/api/mascotas?nombre=Firulais` | Elimina la mascota con ese nombre |
 | DELETE | `/api/mascotas?rut=12.345.678-9` | Elimina todas las mascotas asociadas a ese rut |
 

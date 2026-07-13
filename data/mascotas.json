@@ -1,5 +1,17 @@
 [
-  { "nombre": "Firulais", "rut": "11.111.111-1" },
-  { "nombre": "Michi", "rut": "11.111.111-1" },
-  { "nombre": "Rocky", "rut": "22.222.222-2" }
+  {
+    "nombre": "Firulais",
+    "rut": "11.111.111-1",
+    "tipo": "perro"
+  },
+  {
+    "nombre": "Michi",
+    "rut": "11.111.111-1",
+    "tipo": "gato"
+  },
+  {
+    "nombre": "Rocky",
+    "rut": "22.222.222-2",
+    "tipo": "perro"
+  }
 ]

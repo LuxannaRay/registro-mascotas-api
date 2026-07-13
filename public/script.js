@@ -59,8 +59,9 @@ function pintarMascotas(contenedor, mascotas) {
   mascotas.forEach(m => {
     const div = document.createElement('div');
     div.className = 'tarjeta-mascota';
+    const icono = m.tipo === 'gato' ? '🐱' : '🐶';
     div.innerHTML = `
-      <div class="icono">🐶</div>
+      <div class="icono">${icono}</div>
       <h3>${m.nombre}</h3>
       <p class="rut">Dueño: ${m.rut}</p>
     `;

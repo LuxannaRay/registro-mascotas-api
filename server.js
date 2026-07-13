@@ -49,10 +49,15 @@ app.get('/api/mascotas', (req, res) => {
 
 // ---------- POST: insertar mascota ----------
 app.post('/api/mascotas', (req, res) => {
-  const { nombre, rut } = req.body;
+  const { nombre, rut, tipo } = req.body;
 
   if (!nombre || !rut) {
     return res.status(400).json({ error: 'Debe indicar nombre de la mascota y rut del dueño.' });
+  }
+
+  const tiposValidos = ['perro', 'gato'];
+  if (tipo && !tiposValidos.includes(tipo)) {
+    return res.status(400).json({ error: 'El tipo de mascota debe ser "perro" o "gato".' });
   }
 
   const mascotas = leerMascotas();
@@ -62,7 +67,7 @@ app.post('/api/mascotas', (req, res) => {
     return res.status(409).json({ error: `Ya existe una mascota registrada con el nombre "${nombre}".` });
   }
 
-  const nuevaMascota = { nombre, rut };
+  const nuevaMascota = { nombre, rut, tipo: tipo || 'perro' };
   mascotas.push(nuevaMascota);
   guardarMascotas(mascotas);
 
