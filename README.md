@@ -4,7 +4,7 @@
 
 Esta aplicación consiste en una API desarrollada en Node.js (Express) que permite gestionar el registro de mascotas asociadas al rut de su dueño, utilizando un archivo JSON como medio de almacenamiento. Los objetivos específicos son:
 
-- Registrar mascotas nuevas, asociadas al nombre y al rut de su dueño.
+- Registrar mascotas nuevas según su tipo (perro o gato), asociadas al nombre y al rut de su dueño.
 - Consultar el listado completo de mascotas registradas.
 - Buscar una mascota específica por su nombre.
 - Buscar todas las mascotas registradas bajo un rut determinado.
