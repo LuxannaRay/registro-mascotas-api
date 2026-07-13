@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Registro Civil de Mascotas</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <h1>🐾 Registro Civil de Mascotas</h1>
+  <p>Consulta, registra y elimina mascotas asociadas a un rut</p>
+</header>
+
+<nav class="tabs">
+  <button class="tab-btn activo" data-tab="listado">Listado</button>
+  <button class="tab-btn" data-tab="buscar">Buscar</button>
+  <button class="tab-btn" data-tab="registrar">Registrar</button>
+  <button class="tab-btn" data-tab="eliminar">Eliminar</button>
+</nav>
+
+<main>
+
+  <!-- LISTADO -->
+  <section id="listado" class="tab-content activo">
+    <div class="acciones-listado">
+      <button id="btnListarTodas" class="btn btn-rosa">Listar todas las mascotas</button>
+    </div>
+    <div id="contenedorMascotas" class="grid-mascotas"></div>
+  </section>
+
+  <!-- BUSCAR -->
+  <section id="buscar" class="tab-content">
+    <div class="tarjeta">
+      <h2>Buscar por nombre de mascota</h2>
+      <form id="formBuscarNombre">
+        <label>Nombre de la mascota</label>
+        <input type="text" name="nombre" placeholder="Ej: Firulais" required>
+        <button type="submit" class="btn btn-rosa">Buscar</button>
+      </form>
+    </div>
+
+    <div class="tarjeta">
+      <h2>Buscar por rut del dueño</h2>
+      <form id="formBuscarRut">
+        <label>Rut del dueño</label>
+        <input type="text" name="rut" placeholder="12.345.678-9" required>
+        <button type="submit" class="btn btn-rosa-claro">Buscar</button>
+      </form>
+    </div>
+
+    <div id="resultadoBusqueda" class="grid-mascotas"></div>
+  </section>
+
+  <!-- REGISTRAR -->
+  <section id="registrar" class="tab-content">
+    <div class="tarjeta">
+      <h2>Registrar nueva mascota</h2>
+      <form id="formRegistrar">
+        <label>Nombre de la mascota</label>
+        <input type="text" name="nombre" placeholder="Ej: Firulais" required>
+        <label>Rut del dueño</label>
+        <input type="text" name="rut" placeholder="12.345.678-9" required>
+        <button type="submit" class="btn btn-rosa">Registrar mascota</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- ELIMINAR -->
+  <section id="eliminar" class="tab-content">
+    <div class="tarjeta">
+      <h2>Eliminar mascota por nombre</h2>
+      <form id="formEliminarNombre">
+        <label>Nombre de la mascota</label>
+        <input type="text" name="nombre" placeholder="Ej: Firulais" required>
+        <button type="submit" class="btn btn-peligro">Eliminar mascota</button>
+      </form>
+    </div>
+
+    <div class="tarjeta">
+      <h2>Eliminar todas las mascotas de un rut</h2>
+      <form id="formEliminarRut">
+        <label>Rut del dueño</label>
+        <input type="text" name="rut" placeholder="12.345.678-9" required>
+        <button type="submit" class="btn btn-peligro">Eliminar todas</button>
+      </form>
+    </div>
+  </section>
+
+</main>
+
+<div id="notificacion" class="notificacion"></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.7.2/axios.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
